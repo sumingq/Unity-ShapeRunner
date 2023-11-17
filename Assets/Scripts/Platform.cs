@@ -4,15 +4,10 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     public GameObject[] obstacles; // 장애물 오브젝트들
-    //private bool stepped = false; // 플레이어 캐릭터가 밟았었는가
 
-    // 컴포넌트가 활성화될때 마다 매번 실행되는 메서드
-  
+    // 컴포넌트가 활성화될때마다 매번 실행되는 메서드
     private void OnEnable()
     {
-        // 발판을 리셋하는 처리
-       // stepped = false;
-
         //장애물 1개~3개 랜덤생성
         for (int i = 0; i < obstacles.Length; i++)
         {
@@ -26,16 +21,4 @@ public class Platform : MonoBehaviour
             }
         }
     }
-  
-    
-   /* void OnCollisionEnter2D(Collision2D collision)
-    {
-        // 플레이어 캐릭터가 자신을 밟았을때 점수를 추가하는 처리
-        if (collision.collider.tag == "Player" && !stepped)
-        {
-            stepped = true;
-            GameManager.instance.AddScore(1);
-        }
-    }
-   */
 }
